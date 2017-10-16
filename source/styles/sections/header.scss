@@ -1,0 +1,107 @@
+.header {
+	position: fixed;
+	display: flex;
+    padding: 30px;
+	width: 100%;
+	background-color: #ecebf0;
+	z-index: 1000;
+	@media(max-width:767px){
+		padding: 20px;
+	}
+
+
+	&__wrapper{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+
+	&__call{
+		font-size: 18px;
+		font-weight: bold;
+		font-family: $ff-main;
+		color: #000;
+		text-decoration: none;
+		background-image: url(../images/phone.svg);
+		background-repeat: no-repeat;
+		background-position: left center;
+		cursor: default;
+		padding: 0px 25px;
+
+		&--mobile{
+			background-image: none;
+			display: none;
+			@media(max-width:767px){
+				display: flex;
+				padding: 0px;
+			}
+		}
+
+		&--desktop{
+			@media(max-width:767px){
+				display: none;
+			}
+		}
+
+		&__img{
+			height: 25px;
+		}
+	}
+
+	&__logo__link{
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+	}
+
+	&__svg{
+		fill: $base-color;
+		width: 30px;
+		margin-right: 21px;
+		height: 25px;
+		@media(max-width:767px){
+			width: 20px;
+			margin-right: 10px;
+		}
+	}
+
+	&__logo__name{
+		font-size: 24px;
+		font-family: $ff-main;
+		font-weight: bold;
+		color: #000;
+		@media(max-width:767px){
+			font-size: 18px;
+		}
+	}
+
+}
+
+
+.menu {
+	list-style-type: none;
+	padding-left: 0px;
+	margin: 0px;
+	
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		padding: 0px 15px;
+	}
+
+	&__link{
+		text-decoration: none;
+		text-transform: uppercase;
+		font-family: $ff-main;
+		color: #000000;
+		font-size: 14px;
+		transition: 0.3s;
+
+		&:hover, &:active, &--active{
+			color: $base-color;
+		}
+
+	}
+}

@@ -1,0 +1,131 @@
+.owl-carousel{
+	text-align: center;
+
+	&__title{
+		font-size: 30px;
+		font-family: $ff-main;
+		font-weight: bold;
+		text-align: center;
+		margin-top: 40px;
+		margin-bottom: 15px;
+	}
+
+
+	&__desc{
+		font-size: 18px;
+		font-family: $ff-main;
+		text-align:center;
+		margin-bottom: 25px;
+	}
+
+	&__price{
+		font-size: 30px;
+		font-family: $ff-main;
+		font-weight: bold;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+
+	&__svg{
+		width: 35px;
+		fill: $base-color;
+		transition: 0.3s;
+		opacity: 0.6;
+		height: 35px;
+		@media (max-width: 767px){
+    		width: 25px;
+    		height: 25px;
+   		}
+
+		&:hover, &:active{
+			opacity: 1;
+		}
+	}
+}
+
+
+
+.owl__product .owl-stage-outer{
+	z-index: 1000;
+}
+
+.owl__product .owl-nav{
+	position: absolute;
+    top: 50%;
+    margin-top: -17.5px;
+    width: 100%;
+
+}
+
+.owl__product .owl-prev{
+	float: left;
+    margin-left: -100px;
+    @media (max-width: 767px){
+    	margin-left: -30px;
+    }
+}
+
+.owl__product .owl-next{
+   margin-right: -100px;
+   float: right;
+   @media (max-width: 767px){
+    	margin-right: -30px;
+    }
+ }
+
+
+.owl__slider .owl-nav{
+	position: absolute;
+    top: 50%;
+    margin-top: -17.5px;
+    width: 1170px;
+    left: 50%;
+    margin-left: -585px;
+
+    @media (max-width: 1170px){
+    	width: 100%;
+    	margin-left: -50%;
+    }
+}
+
+.owl__slider .owl-prev{
+	float: left;
+	padding: 20px 20px 15px 20px;
+	background-color: rgba(#fff, 0.5);
+	transition: 0.3s;
+	@media (max-width: 767px){
+    	padding: 15px 15px 10px 15px;
+    }
+}
+
+.owl__slider .owl-next{
+   float: right;
+   padding: 20px 20px 15px 20px;
+   background-color: rgba(#fff, 0.5);
+   transition: 0.3s;
+   @media (max-width: 767px){
+    	padding: 15px 15px 10px 15px;
+    }
+ }
+
+.owl__slider .owl-carousel__svg{
+ 	fill: #000;
+ 	opacity: 1;
+ 	transition: 0.3s;
+ 	 
+ 	@media (max-width: 767px){
+    	width: 15px;
+    }
+ }
+
+
+.owl__slider .owl-prev:hover, .owl__slider .owl-prev:active,
+.owl__slider .owl-next:hover, .owl__slider .owl-next:active 
+{
+ 	background-color: rgba($base-color, 0.5);
+}
+
+.owl__slider .owl-prev:hover svg, .owl__slider .owl-prev:active svg,
+.owl__slider .owl-next:hover svg, .owl__slider .owl-next:active svg{
+ 	fill: #fff;
+ }
