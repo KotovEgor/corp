@@ -5,15 +5,29 @@
 
 
 
-	 &__wrapper{
+	 &__top{
+	 	display: flex;
+	 	justify-content: space-between;
+	 	flex-wrap: wrap;
+	 	align-items: center;
+		margin-bottom: 60px;
+
+		@media(max-width:767px){
+			flex-direction: column;
+		}
+	}
+
+
+	&__bottom{
 	 	display: flex;
 	 	justify-content: space-between;
 	 	flex-wrap: wrap;
 	 	align-items: center;
 
-	@media(max-width:767px){
-		flex-direction: column;
-	}
+		@media(max-width:767px){
+			flex-direction: column;
+		}
+
 	}
 
 	 &__link{

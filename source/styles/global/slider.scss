@@ -44,6 +44,64 @@
 }
 
 
+.owl__slider{
+	padding-bottom: 70px;
+
+	&__wrapper{
+		width: 40%;
+	}
+
+	&__title{
+		font-size: 30px;
+		font-weight: bold;
+		line-height: 48px;
+		font-family: $ff-main;
+		margin-top: 0px;
+	}
+
+	&__desc{
+		font-size: 18px;
+		line-height: 24px;
+		font-family: $ff-main;
+	}
+}
+
+.owl__slider .owl-item {
+	-webkit-animation-duration: 1.3s !important;
+	animation-duration: 1.3s !important;
+}
+
+
+.owl__slider .item{
+	background: url(../images/banner.png) center no-repeat;
+	min-height: 560px;
+	height: 560px;
+	display: flex;
+	align-items: center;
+    text-align: left;
+}
+
+.owl__slider .owl-dot{
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	background-color: #fff;
+	margin-right: 30px;
+}
+
+.owl__slider .owl-dots{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: -70px;
+	position: relative;
+	z-index: 1000;
+}
+
+.owl__slider .owl-dot.active{
+	background-color: $base-color;
+}
+
 
 .owl__product .owl-stage-outer{
 	z-index: 1000;

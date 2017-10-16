@@ -55,6 +55,64 @@ gulp.task('templates:compile', function buildHTML() {
 });
 
 
+gulp.task('templates:compile:news', function buildHTML() {
+  return gulp.src('source/template/news.pug')
+  .pipe(pug({
+    pretty: true
+  }))
+  .pipe(gulp.dest('build'))
+});
+
+
+gulp.task('templates:compile:new', function buildHTML() {
+  return gulp.src('source/template/new.pug')
+  .pipe(pug({
+    pretty: true
+  }))
+  .pipe(gulp.dest('build'))
+});
+
+gulp.task('templates:compile:services', function buildHTML() {
+  return gulp.src('source/template/services.pug')
+  .pipe(pug({
+    pretty: true
+  }))
+  .pipe(gulp.dest('build'))
+});
+
+gulp.task('templates:compile:price', function buildHTML() {
+  return gulp.src('source/template/price.pug')
+  .pipe(pug({
+    pretty: true
+  }))
+  .pipe(gulp.dest('build'))
+});
+
+gulp.task('templates:compile:gallery', function buildHTML() {
+  return gulp.src('source/template/gallery.pug')
+  .pipe(pug({
+    pretty: true
+  }))
+  .pipe(gulp.dest('build'))
+});
+
+gulp.task('templates:compile:company', function buildHTML() {
+  return gulp.src('source/template/company.pug')
+  .pipe(pug({
+    pretty: true
+  }))
+  .pipe(gulp.dest('build'))
+});
+
+gulp.task('templates:compile:map', function buildHTML() {
+  return gulp.src('source/template/map.pug')
+  .pipe(pug({
+    pretty: true
+  }))
+  .pipe(gulp.dest('build'))
+});
+
+
 gulp.task('sass', function () {
   return gulp.src('source/styles/main.scss')
     .pipe(sass({outputStyles: 'compressed'}).on('error', sass.logError))
@@ -85,6 +143,13 @@ gulp.task('copy', gulp.parallel('copy:fonts','copy:images','copy:css'));
 
 gulp.task('watch', function(){
 	gulp.watch('source/template/**/*.pug', gulp.series("templates:compile"));
+  gulp.watch('source/template/**/*.pug', gulp.series("templates:compile:news"));
+  gulp.watch('source/template/**/*.pug', gulp.series("templates:compile:new"));
+  gulp.watch('source/template/**/*.pug', gulp.series("templates:compile:map"));
+  gulp.watch('source/template/**/*.pug', gulp.series("templates:compile:price"));
+  gulp.watch('source/template/**/*.pug', gulp.series("templates:compile:gallery"));
+  gulp.watch('source/template/**/*.pug', gulp.series("templates:compile:services"));
+  gulp.watch('source/template/**/*.pug', gulp.series("templates:compile:company"));
 	gulp.watch('source/styles/**/*.scss', gulp.series("sass"));
   gulp.watch('source/js/**/*.js', gulp.series("js"));
 });
@@ -92,7 +157,9 @@ gulp.task('watch', function(){
 
 gulp.task('default', gulp.series(
 	'clean',
-	gulp.parallel('templates:compile', 'js', 'sass', 'copy'),
+	gulp.parallel('templates:compile', 'templates:compile:news', 'templates:compile:new', 
+    'templates:compile:map', 'templates:compile:price', 'templates:compile:gallery', 
+    'templates:compile:services', 'templates:compile:company', 'js', 'sass', 'copy'),
 	gulp.parallel('watch', 'server')
 	)
 );

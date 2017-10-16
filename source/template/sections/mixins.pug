@@ -9,18 +9,49 @@ mixin services(title, desc)
 			.services__desc= desc
 
 
-mixin sliders(url, title)
-	.item
-		img.owl-carousel__img(src=url, alt=title)
+mixin services--detail(title, desc)
+	.services__item.services__item--detail
+		.services__step.services__step--detail
+			.services__step__wrapper
+		.services__body.services__body--detail
+			h2.services__title= title
+			.services__desc= desc
 
 
-mixin slider(url, title, desc, price)
+mixin news(data, title, desc)
+	.news__item
+		h3.news__title
+			a.news__link(href="new.html")= title
+		.news__data= data
+		.news__desc= desc
+
+
+mixin news--detail(data, title, desc, url)
+	.news__item
+		.news__img
+			img.news__img__item(src=url, alt=title)
+		h3.news__title
+			a.news__link(href="news-detail.html")= title
+		.news__data= data
+		.news__desc= desc
+		a.button(href="/new.html") ПОДРОБНЕЕ
+
+
+mixin sliders(title, desc)
 	.item
-		img.owl-carousel__img(src=url, alt=title)
-		h2.owl-carousel__title= title
-		.owl-carousel__desc= desc
-		h3.owl-carousel__price= price
-		a.button заказать
+		.container
+			.owl__slider__wrapper
+				h2.owl__slider__title= title
+				.owl__slider__desc= desc
+
+
+mixin product(url, title, desc, price)
+	.product__item
+		img.product__img(src=url, alt=title)
+		h2.product__title= title
+		.product__desc= desc
+		h3.product__price= price
+
 
 
 mixin svg-logo
